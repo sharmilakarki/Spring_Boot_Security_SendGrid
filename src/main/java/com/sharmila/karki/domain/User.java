@@ -3,6 +3,8 @@ package com.sharmila.karki.domain;
 import java.io.Serializable;
 import java.util.Date;
 
+import javax.validation.constraints.NotNull;
+
 /**
  * @author Sharmila Karki
  *
@@ -11,6 +13,7 @@ public class User implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	private String id;
+	@NotNull
 	private String email;
 	private String password;
 	private Date createdDate;
