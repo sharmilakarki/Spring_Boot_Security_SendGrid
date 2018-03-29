@@ -14,7 +14,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.sharmila.karki.domain.CustomEmail;
 import com.sharmila.karki.domain.User;
+import com.sharmila.karki.service.EmailManager;
 import com.sharmila.karki.service.UserManager;
 
 /**
@@ -27,6 +29,9 @@ public class UserController {
 
 	@Autowired
 	private UserManager userManager;
+
+	@Autowired
+	private EmailManager emailManager;
 
 	@GetMapping()
 	public List<User> findAll(User user) {
@@ -70,5 +75,10 @@ public class UserController {
 			throw new IllegalArgumentException("Not a valid user to delete");
 		}
 
+	}
+	
+	@PostMapping(value="sendEmail")
+	public void sendEmail(@RequestBody CustomEmail email){
+		this.emailManager.sendEmail(email);
 	}
 }

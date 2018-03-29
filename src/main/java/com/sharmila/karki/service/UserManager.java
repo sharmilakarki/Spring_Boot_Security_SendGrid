@@ -9,5 +9,6 @@ import com.sharmila.karki.repository.CRUDManager;
  */
 public interface UserManager extends CRUDManager<User, String> {
 	public User findByEmail(String email);
+	
 
 }
