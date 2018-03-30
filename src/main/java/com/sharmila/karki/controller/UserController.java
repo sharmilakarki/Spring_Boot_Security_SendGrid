@@ -23,7 +23,7 @@ import com.sharmila.karki.service.UserManager;
  * @author Sharmila Karki
  *
  */
-@RequestMapping(value = "/")
+@RequestMapping(value = "/user")
 @RestController
 public class UserController {
 
