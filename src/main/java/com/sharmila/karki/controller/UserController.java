@@ -77,7 +77,7 @@ public class UserController {
 
 	}
 	
-	@PostMapping(value="sendEmail")
+	@PostMapping(value="/sendEmail")
 	public void sendEmail(@RequestBody CustomEmail email){
 		this.emailManager.sendEmail(email);
 	}
